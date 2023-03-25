@@ -9,13 +9,13 @@ Exercises
 5. Add width parameter.
 """
 
+import math
+import turtle
 from turtle import *
-
 from freegames import vector
 
 
 def line(start, end):
-    color('blue', 'red')
     """Draw line from start to end."""
     up()
     goto(start.x, start.y)
@@ -24,39 +24,58 @@ def line(start, end):
 
 
 def square(start, end):
-    import turtle
-    color('black', 'pink')
     """Draw square from start to end."""
-    
-    turtle.goto (175, 100)
-    turtle.color ("purple", "yellow")
-    turtle.pendown ()
-    turtle.begin_fill()
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
-    for i in range (4):
-        turtle.forward(150)
-        turtle.left(90)
-    turtle.end_fill ()
+    for count in range(4):
+        forward(end.x - start.x)
+        left(90)
 
+    end_fill()
 
 def circulo(start, end):
     """Draw circle from start to end."""
-    import turtle
-    turtle.color ("black", "pink")
-    draw = turtle.Turtle ()
-    draw.circle(140)
+    hideturtle()
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    circle(end.x-start.x)
+    end_fill()
+
 
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
-    import turtle
-    turtle.color ("blue", "white")
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+        forward(end.x-start.x)
+        left(90)
+        forward(end.y-start.y)
+        left(90)
+
+    end_fill()
 
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    import turtle
-    turtle.color ("red", "yellow")
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3):
+        forward(end.x-start.x)
+        left(120)
+
+    end_fill()
 
 
 def tap(x, y):
